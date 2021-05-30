@@ -1,0 +1,56 @@
+:root {
+  --theme: rgba(112, 182, 115, 1);
+  --green: rgba(112, 182, 115, .8);
+  --progress-bg-color: var(--green);
+  --progress-font-color: var(--progress-bg-color);
+}
+.rc-upload-file-progress {
+  display: grid;
+  grid-template-columns: auto 30px;
+  column-gap: 5px;
+  width: 100%;
+}
+.rc-upload-file-progress-bar {
+  background-color: var(--progress-bg-color);
+  height: 2px;
+  align-self: center;
+  transition: width 1s;
+}
+.rc-upload-file-progress-value {
+  color: var(--progress-font-color);
+  align-self: center;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.rc-upload-file-loaded-image {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30px;
+}
+.rc-upload-file-loaded-image
+img {
+  height: 30px;
+}
+
+.rc-upload-file-loaded-image
+span {
+  padding: 0 5px;
+}
+
+.rc-upload-file-button {
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  background-color: var(--theme);
+  color: #fff;
+  transition: background-color .5s;
+  cursor: pointer;
+  outline: none;
+}
+.rc-upload-file-button:hover {
+  background-color: var(--green);
+}
