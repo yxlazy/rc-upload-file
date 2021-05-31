@@ -4,6 +4,12 @@
   --progress-bg-color: var(--green);
   --progress-font-color: var(--progress-bg-color);
 }
+.rc-upload-file * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .rc-upload-file-progress {
   display: grid;
   grid-template-columns: auto 30px;
@@ -21,6 +27,55 @@
   align-self: center;
   font-size: 10px;
   font-weight: 200;
+}
+
+.rc-upload-file-modal {
+  background: rgba(99, 110, 114, .6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rc-upload-file-modal-content {
+  position: relative;
+  background: #fff;
+}
+.rc-upload-file-modal-content-close {
+  border: none;
+  background: #fff;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.rc-upload-file-modal-content-close svg {
+  color: #636e72;
+  transition: color .5s;
+}
+.rc-upload-file-modal-content-close:hover svg {
+  color: #b2bec3;
+}
+.rc-upload-file-modal-title {
+  border-bottom: 1px solid #dfe6e9;
+  padding: 15px;
+  margin: 0;
+  color: #2d3436;
+  font-weight: 500;
+  font-size: 16px;
+}
+.rc-upload-file-modal-image {
+  max-width: 500px;
+  max-height: 400px;
+  padding: 12px;
 }
 
 .rc-upload-file-loaded-image {

@@ -4,4 +4,4 @@ function isNumber(num) {
 
 export {
   isNumber,
-}
+};
