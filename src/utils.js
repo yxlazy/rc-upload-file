@@ -1,7 +1,12 @@
-function isNumber(num) {
-  return !Number.isNaN(num) && typeof num === "number";
+function isNumber(value) {
+  return !Number.isNaN(value) && typeof value === "number";
+}
+
+function isUndefined(value) {
+  return typeof value === "undefined";
 }
 
 export {
   isNumber,
+  isUndefined,
 };

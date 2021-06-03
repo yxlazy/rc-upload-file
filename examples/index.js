@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
-import {Image, Modal, Progress} from "../src/index";
+import UploadFile, {Image, Modal, Progress} from "../src/index";
 
 const styles = {
   card: {
@@ -89,6 +89,19 @@ function App() {
           loaded={100}
           total={100}
           progressStyle="success"
+        />
+      </Examples>
+      <Examples title="上传图片">
+        <UploadFile 
+          action="http://localhost:5000/upload"
+          multiple
+        />
+      </Examples>
+      <Examples title="上传文件">
+        <UploadFile 
+          action="http://localhost:5000/upload"
+          multiple
+          accept="*"
         />
       </Examples>
     </div>

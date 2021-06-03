@@ -1,9 +1,9 @@
-import RcUploadFile from "./rcUploadFile";
+import UploadFile from "./uploadFile";
 import Progress from "./progress";
 import Modal from "./modal";
 import Image from "./image";
 
-export default RcUploadFile;
+export default UploadFile;
 export {
   Progress,
   Modal,
