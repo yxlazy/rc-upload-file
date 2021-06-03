@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
-import {Modal, Progress} from "../src/index";
+import {Image, Modal, Progress} from "../src/index";
 
 const styles = {
   card: {
@@ -66,6 +66,29 @@ function App() {
           isOpen={open}
           onClose={handleClose}
           container={container}
+        />
+      </Examples>
+      <Examples title="图片">
+        <Image 
+          title="image.png2"
+          src="https://picsum.photos/500/500"
+          loaded={50}
+          total={100}
+          progressStyle="error"
+        />
+        <Image 
+          title="image.png1"
+          src="https://picsum.photos/id/14/500/500"
+          loaded={70}
+          total={100}
+          progressStyle="progress"
+        />
+        <Image 
+          title="iamge.bmp1"
+          src="https://picsum.photos/id/56/500/500"
+          loaded={100}
+          total={100}
+          progressStyle="success"
         />
       </Examples>
     </div>

@@ -78,34 +78,26 @@
   padding: 12px;
 }
 
-.rc-upload-file-loaded-image {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 30px;
-}
-.rc-upload-file-loaded-image
-img {
-  height: 30px;
-}
-
-.rc-upload-file-loaded-image
-span {
-  padding: 0 5px;
-}
-
-.rc-upload-file-button {
-  font-size: 15px;
-  font-weight: 300;
-  border-radius: 5px;
+.rc-upload-file-image {
+  display: grid;
+  grid-template-columns: 50px auto;
+  column-gap: 20px;
+  border: 1px solid #dfe6e9;
+  border-radius: 3px;
   padding: 10px;
-  border: none;
-  background-color: var(--theme);
-  color: #fff;
-  transition: background-color .5s;
-  cursor: pointer;
-  outline: none;
+  margin: 10px;
 }
-.rc-upload-file-button:hover {
-  background-color: var(--green);
+.rc-upload-file-image-img {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.rc-upload-file-image-img>img {
+  cursor: pointer;
+  width: inherit;
+  width: inherit;
+}
+.rc-upload-file-image-progress {
+  margin: auto 0;
 }
