@@ -1,49 +1,62 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-  mode: "production",
-  entry: {
-    "rc-upload-file": path.resolve(__dirname, "./src/index.js")
-  },
-  output: {
-    filename: "[name].min.js",
-    path: path.resolve(__dirname, "./lib"),
-    libraryTarget: "umd",
-    library: "RcUploadFile",
-    libraryExport: "default"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env", "@babel/preset-react"]
+module.exports = (env) => {
+  const isDev = env.development || false;
+
+  return ({
+    mode: isDev ? "development" : "production",
+    entry: path.resolve(__dirname, "./examples/index.js"),
+    output: {
+      filename: "[name].[contenthash].js",
+      path: path.resolve(__dirname, "./build"),
+    },
+    devServer: {
+      port: 8000,
+      hot: true,
+      open: true,
+      historyApiFallback: true
+    },
+    devtool: isDev ? "eval-cheap-module-source-map" : false,
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          use: [
+            {
+              loader: "babel-loader",
+              options: {
+                presets: ["@babel/preset-env", "@babel/preset-react"]
+              }
             }
-          }
-        ],
-        include: path.resolve(__dirname, "./src")
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader"
-          },
-        ],
-        include: path.resolve(__dirname, "./src")
+          ],
+        },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: "style-loader"
+            },
+            {
+              loader: "css-loader"
+            },
+          ],
+        }
+      ]
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: "Demo",
+        template: path.resolve(__dirname, "./examples/index.html"),
+      })
+    ],
+    resolve: {
+      extensions: [".js", ".jsx"],
+    },
+    optimization: {
+      splitChunks: {
+        chunks: "all"
       }
-    ]
-  },
-  resolve: {
-    extensions: [".js", ".jsx"]
-  },
-  externals: {
-    react: "react"
-  }
-};
+    }
+  });
+}

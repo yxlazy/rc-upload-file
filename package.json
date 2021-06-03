@@ -20,23 +20,21 @@
   },
   "license": "MIT",
   "scripts": {
-    "demo:watch": "webpack serve --config webpack.demo.config.js --env development",
-    "demo:build": "webpack --config webpack.demo.config.js --env production",
-    "build": "webpack --config webpack.config.js",
-    "lint": "eslint --ext .js src examples --fix",
-    "test": "jest"
+    "demo:watch": "webpack serve --config webpack.config.js --env development",
+    "demo:build": "webpack --config webpack.config.js --env production",
+    "build": "babel src --out-dir lib --copy-files",
+    "lint": "eslint --ext .js src examples --fix"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
-    "chai": "^4.2.0",
     "css-loader": "^5.0.1",
     "eslint": "^7.26.0",
     "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.3.1",
-    "jest": "^26.6.3",
     "style-loader": "^2.0.0",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",

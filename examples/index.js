@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
-import UploadFile, {Image, Modal, Progress} from "../src/index";
+import UploadFile, {Image, Modal, Progress} from "../lib";
 
 const styles = {
   card: {
@@ -62,7 +62,7 @@ function App() {
         <button style={{border: "none", padding: "10px", cursor: "pointer"}} onClick={handleOpen}>Switch</button>
         <Modal 
           title="modal.png" 
-          src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2759603483,1319363293&fm=26&gp=0.jpg"
+          src="https://picsum.photos/id/100/500/500"
           isOpen={open}
           onClose={handleClose}
           container={container}
