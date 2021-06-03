@@ -1,7 +1,7 @@
 {
   "name": "rc-upload-file",
   "version": "1.0.0",
-  "main": "lib/rc-upload-file.min.js",
+  "main": "lib/index.js",
   "author": "yanxiaolzay <1977735808@qq.com>",
   "keywords": [
     "react",
