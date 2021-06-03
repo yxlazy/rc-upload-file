@@ -50,7 +50,7 @@
   color: var(--progress-font-color);
   align-self: center;
   font-size: 10px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .rc-upload-file-modal {

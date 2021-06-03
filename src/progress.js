@@ -22,16 +22,18 @@ export default function progress({value, total, status}) {
     }
   }, [value, total]);
   
+  const displayColor = status != "error" ? status == "progress" ? colors.progress : colors.primary : colors.error;
+
   return(
     <div className={prefix}>
       <span 
         className={`${prefix}-bar`} 
         style={{
           width: `calc(${prog}% - 50px)`,
-          background: status != "error" ? status == "progress" ? colors.progress : colors.primary : colors.error
+          background: displayColor
         }}
       />
-      <span className={`${prefix}-value`} style={{width: "40px"}}>{prog} %</span>
+      <span className={`${prefix}-value`} style={{width: "40px", color: displayColor}}>{prog} %</span>
     </div>
   );
 }
