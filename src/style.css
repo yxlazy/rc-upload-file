@@ -55,7 +55,7 @@
 
 .rc-upload-file-modal {
   background: rgba(99, 110, 114, .6);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
