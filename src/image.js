@@ -29,6 +29,7 @@ export default function image({
         <img src={src} onClick={openImageAtModal}/>
       </div>
       <div className={`${prefix}-progress`}>
+        <p>{title}</p>
         <Progress value={loaded} total={total} status={progressStyle}/>
       </div>
       <Modal title={title} src={src} isOpen={isOpen} onClose={onClose}/>
