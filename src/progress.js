@@ -29,11 +29,11 @@ export default function progress({value, total, status}) {
       <span 
         className={`${prefix}-bar`} 
         style={{
-          width: `calc(${prog}% - 50px)`,
+          width: `calc(${Number.isNaN(prog) ? 0 : prog}% - 50px)`,
           background: displayColor
         }}
       />
-      <span className={`${prefix}-value`} style={{width: "40px", color: displayColor}}>{prog} %</span>
+      <span className={`${prefix}-value`} style={{width: "40px", color: displayColor}}>{Number.isNaN(prog) ? 0 : prog} %</span>
     </div>
   );
 }
