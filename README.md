@@ -14,21 +14,21 @@ or
 $ npm install rc-upload-file
 ```
 
- 
-
 ### Quick start
 
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RcUploadFile from 'rc-upload-file';
+import UploadFile from 'rc-upload-file';
 
 function App() {
   return(
     <div className='app'>
-      <RcUploadFile>
-        <button className='app-upload'>upload</button>
-      </RcUploadFile>
+      <UploadFile 
+      	action="https://example.com/upload"
+      	multiple
+        accept="*"
+      />
     </div>
   );
 }
@@ -40,22 +40,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ### API
 
-|  props   |     description      |      type       | default |
-| :------: | :------------------: | :-------------: | :-----: |
-| children | show text on `input` | `ReactElement ` |    —    |
-
-### Test
-
-```bash
-$ yarn run test
-```
-
-or 
-
-```bash
-$ npm run test
-```
-
+|  props   |                  description                   |   type    | required |  default  |
+| :------: | :--------------------------------------------: | :-------: | -------- | :-------: |
+|  action  |            absolute path to upload             | `string`  | `true`   |     —     |
+|  accept  |                 file type MIME                 | `string`  | `false`  | `image/*` |
+| multiple | whether to allow multiple files to be selected | `boolean` | `false`  |  `false`  |
  
 
 ### Contribute
