@@ -14,7 +14,8 @@ export default function image({
   progressStyle
 }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [container, setContainer] = useState(null);
+  
   function openImageAtModal() {
     setIsOpen(true);
   }
@@ -23,16 +24,20 @@ export default function image({
     setIsOpen(false);
   }
 
+  function getRef(ref) {
+    setContainer(ref);
+  }
+
   return(
     <div className={`${prefix}`}>
-      <div className={`${prefix}-img`}>
+      <div className={`${prefix}-img`} ref={getRef}>
         <img src={src} onClick={openImageAtModal}/>
       </div>
       <div className={`${prefix}-progress`}>
         <p>{title}</p>
         <Progress value={loaded} total={total} status={progressStyle}/>
       </div>
-      <Modal title={title} src={src} isOpen={isOpen} onClose={onClose}/>
+      <Modal title={title} src={src} isOpen={isOpen} container={container} onClose={onClose}/>
     </div>
   );
 }

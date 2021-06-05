@@ -60,16 +60,20 @@
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
+  z-index: 1000;
+}
+.rc-upload-file-modal>div {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 .rc-upload-file-modal-content {
   position: relative;
   background: #fff;
+  transform-origin: 556px 171px;
+  transition: transform .5s;
 }
 .rc-upload-file-modal-content-close {
   border: none;
@@ -97,8 +101,7 @@
   font-size: 16px;
 }
 .rc-upload-file-modal-image {
-  max-width: 500px;
-  max-height: 500px;
+  width: 500px;
   padding: 12px;
 }
 

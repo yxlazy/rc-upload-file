@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
@@ -17,16 +17,28 @@ function Portal({container, children}) {
 }
 
 function ImageModal({title, src, onClose}) {
-  
+  const [scale, setScale] = useState("scale(0)");
+
+  useEffect(() => {
+    setScale("scale(1)");
+  }, []);
+
+  function handleClose(e) {
+    setScale("scale(0)");
+    setTimeout(() => onClose.call(this, e), 500);
+  }
+
   return(
     <div className={`${prefix}`}>
-      <div className={`${prefix}-content`}>
-        <button onClick={onClose} className={`${prefix}-content-close`}>
-          <span><CloseSvg /></span>
-        </button>
-        <p className={`${prefix}-title`}>{title}</p>
-        <div className={`${prefix}-image`}>
-          <img src={src} style={{width: "100%"}}/>
+      <div>
+        <div className={`${prefix}-content`} style={{transform: scale}}>
+          <button onClick={handleClose} className={`${prefix}-content-close`}>
+            <span><CloseSvg /></span>
+          </button>
+          <p className={`${prefix}-title`}>{title}</p>
+          <div className={`${prefix}-image`}>
+            <img src={src} style={{width: "100%"}}/>
+          </div>
         </div>
       </div>
     </div>
