@@ -1,6 +1,6 @@
 {
   "name": "rc-upload-file",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "author": "yanxiaolzay <1977735808@qq.com>",
   "keywords": [
